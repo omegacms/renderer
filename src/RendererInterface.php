@@ -27,8 +27,8 @@ use Omega\View\ViewManager;
 /**
  * Renderer interface.
  *
- * The `RendererInterface` defines the contract for rendering views in the Omega 
- * system. Classes implementing this interface must provide a way to render a View 
+ * The `RendererInterface` defines the contract for rendering views in the Omega
+ * system. Classes implementing this interface must provide a way to render a View
  * object and allow setting the ViewManager to be used for rendering.
  *
  * @category    Omega
@@ -42,8 +42,8 @@ use Omega\View\ViewManager;
 interface RendererInterface
 {
     /**
-     * Render a view. 
-     * 
+     * Render a view.
+     *
      * This method is responsible for rendering a View object and processing its contents.
      *
      * @param  View $view Holds an instance of View.

@@ -25,10 +25,9 @@ use Omega\View\ViewManager;
 
 /**
  * Has manager trait class.
- * 
- * This trait is part of the Omega CMS Renderer Package and provides a common 
- * method to set a ViewManager object. It is used to manage view-related functionality 
- * within rendering classes. 
+ *
+ * The `HasManagerTrait` provides a common method to set a ViewManager object. It is used
+ * to manage view-related functionality within rendering classes.
  *
  * @category    Omega
  * @package     Omega\Renderer

@@ -26,10 +26,9 @@ use Omega\View\View;
 
 /**
  * Literal renderer class.
- * 
- * This class is part of the Omega CMS Renderer Package and provides a renderer 
- * that treats the view as a literal file. It directly returns the contents of 
- * the view file without any processing. 
+ *
+ * TThe `LiteralRenderer` provides a renderer that treats the view as a literal file.
+ * It directly returns the contents of the view file without any processing.
  *
  * @category    Omega
  * @package     Omega\Renderer

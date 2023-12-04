@@ -41,9 +41,9 @@ use Omega\Helpers\Alias;
 use Omega\View\View;
 
 /**
- * Advanced renderer class. 
- * 
- * The `AdvancedRenderer` class is part of the Omega CMS Renderer Package and 
+ * Advanced renderer class.
+ *
+ * The `AdvancedRenderer` class is part of the Omega CMS Renderer Package and
  * provides advanced rendering capabilities.
  *
  * @category    Omega
@@ -106,9 +106,9 @@ class AdvancedRenderer implements RendererInterface
     }
 
     /**
-     * Compile the template. 
-     * 
-     * This method compiles the template content by processing various directives 
+     * Compile the template.
+     *
+     * This method compiles the template content by processing various directives
      * and constructs.
      *
      * @param  string $template Holds the template name.
@@ -168,8 +168,8 @@ class AdvancedRenderer implements RendererInterface
     }
 
     /**
-     * Extends the template. 
-     * 
+     * Extends the template.
+     *
      * This method extends the current template with another layout template.
      *
      * @param  string $template Holds the template name.
@@ -185,10 +185,10 @@ class AdvancedRenderer implements RendererInterface
 
     /**
      * Magic call.
-     * 
+     *
      * This method handles dynamic method calls, typically for macros.
      *
-     * @param  string $name      Holds the method name. 
+     * @param  string $name      Holds the method name.
      * @param  mixed  ...$values Holds the method params/values.
      * @return mixed
      * @throws Exception
