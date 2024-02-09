@@ -36,8 +36,8 @@ use function ob_start;
 use function preg_replace_callback;
 use function realpath;
 use function touch;
+use function Omega\Helpers\view;
 use Exception;
-use Omega\Helpers\Alias;
 use Omega\View\View;
 
 /**
@@ -96,7 +96,7 @@ class AdvancedRenderer implements RendererInterface
         ob_end_clean();
 
         if ( $layout = $this->layouts[ $cached ] ?? null ) {
-            return Alias::view( $layout, array_merge(
+            return view( $layout, array_merge(
                 $view->data,
                 [ 'contents' => $contents ],
             ) );
