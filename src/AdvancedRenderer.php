@@ -11,7 +11,7 @@
 /**
  * @declare
  */
-//declare( strict_types = 1 );
+declare( strict_types = 1 );
 
 /**
  * @namespace
@@ -96,10 +96,12 @@ class AdvancedRenderer implements RendererInterface
         ob_end_clean();
 
         if ( $layout = $this->layouts[ $cached ] ?? null ) {
-            return view( $layout, array_merge(
+            $layoutView = view( $layout, array_merge(
                 $view->data,
                 [ 'contents' => $contents ],
             ) );
+
+            return $layoutView->__toString();
         }
 
         return $contents;
