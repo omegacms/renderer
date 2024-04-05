@@ -75,7 +75,7 @@ class AdvancedRenderer implements RendererInterface
     {
         $hash     = md5( $view->path );
         $basePath = realpath(__DIR__ . '/../../../..');
-        $folder   = $basePath . '/storage/views';
+        $folder   = $basePath . '/storage/framework/data/views';
 
         if ( ! is_file( "{$folder}/{$hash}.php" ) ) {
             touch( "{$folder}/{$hash}.php" );
