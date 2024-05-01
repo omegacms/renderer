@@ -36,6 +36,7 @@ use function ob_start;
 use function preg_replace_callback;
 use function realpath;
 use function touch;
+use function Omega\Helpers\get_storage_path;
 use function Omega\Helpers\view;
 use Exception;
 use Omega\View\View;
@@ -73,10 +74,9 @@ class AdvancedRenderer implements RendererInterface
      */
     public function render( View $view ) : string
     {
-        $hash     = md5( $view->path );
-        $basePath = realpath(__DIR__ . '/../../../..');
-        $folder   = $basePath . '/storage/framework/data/views';
-
+        $hash   = md5( $view->path );
+        $folder = get_storage_path( 'framework/data/views' );
+        
         if ( ! is_file( "{$folder}/{$hash}.php" ) ) {
             touch( "{$folder}/{$hash}.php" );
         }
@@ -164,6 +164,11 @@ class AdvancedRenderer implements RendererInterface
         // replace `{!! ... !!}` with `print ...`
         $template = preg_replace_callback( '#\{!!([^}]+)!!\}#', function ( $matches ) {
             return '<?php print ' . $matches[ 1 ] . '; ?>';
+        }, $template );
+
+        // replace {! ... !} with `print number_format`
+        $template = preg_replace_callback( '#\{\!\s*([^}]+)\s*\!\}#', function ($matches) {
+            return '<?php print number_format(' . $matches[1] . ', 2); ?>';
         }, $template );
 
         return $template;
